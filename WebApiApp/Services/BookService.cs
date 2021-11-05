@@ -8,7 +8,7 @@ namespace WebApiApp.Services
     {
         private readonly IMongoCollection<Book> _books;
 
-        public BookService(IBookstoreDatabaseSettings settings)
+        public BookService(IMongoDbSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
