@@ -33,7 +33,7 @@ namespace WebApiApp
             services.Configure<MongoDbSettings>(mongoDbSettings);
             services.AddSingleton<IMongoDbSettings>(sp =>
                 sp.GetRequiredService<IOptions<MongoDbSettings>>().Value);
-            services.AddSingleton<BookService>();
+            services.AddSingleton<IBookService, BookService>();
             services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
             services.AddSwaggerGen(c =>
             {

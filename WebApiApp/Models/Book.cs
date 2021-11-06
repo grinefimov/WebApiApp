@@ -5,6 +5,19 @@ namespace WebApiApp.Models
 {
     public class Book
     {
+        public Book()
+        {
+        }
+
+        public Book(string id, string name, decimal price, string category, string author)
+        {
+            Id = id;
+            Name = name;
+            Price = price;
+            Category = category;
+            Author = author;
+        }
+
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
